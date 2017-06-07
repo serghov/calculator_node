@@ -1,9 +1,9 @@
 const Gpio = require('chip-gpio').Gpio;
 const NodeWebcam = require("node-webcam");
 const SerialPort = require("serialport");
-const request = request('request');
+const request = require('request');
 
-const btn = new Gpio(7, 'in', 'both', {debounceTimeout: 500});
+const btn = new Gpio(7, 'in', 'both', {debounceTimeout: 1000});
 
 
 const exit = () => {
@@ -51,6 +51,7 @@ const port = new SerialPort("/dev/ttyS0", {
 	// 	port.write('number is ' + n + '\n');
 	// }, 1000);
 
+	// todo: add delay so we wait some time after button
 	btn.watch((err, value) => {
 		port.write('taking a picture number' + n++ + '\n');
 		NodeWebcam.capture("test_picture", c_opts, function (err, data) {
