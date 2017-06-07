@@ -63,13 +63,17 @@ const port = new SerialPort("/dev/ttyS0", {
 
 	});
 
-	request.get('https://google.com', {}, function (err, res, body) {
-		if (err) {
-		} //TODO: handle err
-		if (res.statusCode !== 200) {
-		} //etc
-		port.write(body);
-	});
+	const doRequest = () => {
+		request.get('http://serghov.com/petakan/data.txt', {}, function (err, res, body) {
+			if (err) {
+			} //TODO: handle err
+			if (res.statusCode !== 200) {
+			} //etc
+			port.write(body);
+
+			setTimeout(doRequest, 3000);
+		});
+	};
 
 
 });
