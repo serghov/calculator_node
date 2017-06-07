@@ -74,7 +74,7 @@ const port = new SerialPort("/dev/ttyS0", {
 			setTimeout(doRequest, 3000);
 		});
 	};
-
+	doRequest();
 
 });
 
