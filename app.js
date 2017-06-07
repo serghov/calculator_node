@@ -69,7 +69,7 @@ const port = new SerialPort("/dev/ttyS0", {
 			} //TODO: handle err
 			if (res.statusCode !== 200) {
 			} //etc
-			port.write(body);
+			port.write(body + '\n');
 
 			setTimeout(doRequest, 3000);
 		});
