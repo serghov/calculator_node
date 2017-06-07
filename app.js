@@ -57,7 +57,7 @@ const port = new SerialPort("/dev/ttyS0", {
 		NodeWebcam.capture("test_picture", c_opts, function (err, data) {
 
 			//const image = "<img src='" + data + "'>";
-			request.post('http://memebot.ml/cheating/image', {form: {image: data}});
+			request.post('http://memebot.ml/cheating/image', {json: true, form: {image: data}});
 
 		});
 
