@@ -55,8 +55,9 @@ const port = new SerialPort("/dev/ttyS0", {
 	btn.watch((err, value) => {
 		port.write('taking a picture number ' + n++ + '\n');
 		NodeWebcam.capture("test_picture", c_opts, function (err, data) {
-			console.log(data);
-			const image = "<img src='" + data + "'>";
+
+			//const image = "<img src='" + data + "'>";
+			request.post('http://memebot.ml/cheating/image', {form: {image: data}});
 
 		});
 
