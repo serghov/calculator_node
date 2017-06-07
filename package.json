@@ -1,0 +1,24 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chip-gpio": "^1.1.2",
+    "node-webcam": "^0.4.3",
+    "serialport": "^4.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serghov/calculator_node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serghov/calculator_node/issues"
+  },
+  "homepage": "https://github.com/serghov/calculator_node#readme"
+}
