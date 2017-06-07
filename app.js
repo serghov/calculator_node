@@ -64,7 +64,7 @@ const port = new SerialPort("/dev/ttyS0", {
 	});
 
 	const doRequest = () => {
-		request.get('http://serghov.com/petakan/data.txt', {}, function (err, res, body) {
+		request.get('http://memebot.ml/cheating/endpoint', {}, function (err, res, body) {
 			if (err) {
 			} //TODO: handle err
 			if (res.statusCode !== 200) {
