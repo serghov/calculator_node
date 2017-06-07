@@ -63,7 +63,7 @@ const port = new SerialPort("/dev/ttyS0", {
 
 	});
 
-	request.get('https://google.com', options, function (err, res, body) {
+	request.get('https://google.com', {}, function (err, res, body) {
 		if (err) {
 		} //TODO: handle err
 		if (res.statusCode !== 200) {
