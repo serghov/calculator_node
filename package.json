@@ -9,6 +9,7 @@
   "dependencies": {
     "chip-gpio": "^1.1.2",
     "node-webcam": "^0.4.3",
+    "request": "^2.81.0",
     "serialport": "^4.0.7"
   },
   "repository": {

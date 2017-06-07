@@ -1,6 +1,7 @@
 const Gpio = require('chip-gpio').Gpio;
 const NodeWebcam = require("node-webcam");
 const SerialPort = require("serialport");
+const request = request('request');
 
 const btn = new Gpio(7, 'in', 'both', {debounceTimeout: 500});
 
@@ -60,6 +61,15 @@ const port = new SerialPort("/dev/ttyS0", {
 
 
 	});
+
+	request.get('https://google.com', options, function (err, res, body) {
+		if (err) {
+		} //TODO: handle err
+		if (res.statusCode !== 200) {
+		} //etc
+		port.write(res);
+	});
+
 
 });
 
