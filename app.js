@@ -30,9 +30,9 @@ const Webcam = NodeWebcam.create(opts);
 Webcam.capture("test_picture", function (err, data) {
 });
 
-NodeWebcam.capture("test_picture", opts, function (err, data) {
-
-});
+// NodeWebcam.capture("test_picture", opts, function (err, data) {
+//
+// });
 
 //Return type with base 64 image
 
@@ -53,7 +53,7 @@ const port = new SerialPort("/dev/ttyS0", {
 
 	// todo: add delay so we wait some time after button
 	btn.watch((err, value) => {
-		port.write('taking a picture number' + n++ + '\n');
+		port.write('taking a picture number ' + n++ + '\n');
 		NodeWebcam.capture("test_picture", c_opts, function (err, data) {
 			console.log(data);
 			const image = "<img src='" + data + "'>";
@@ -66,9 +66,17 @@ const port = new SerialPort("/dev/ttyS0", {
 	const doRequest = () => {
 		request.get('http://memebot.ml/cheating/endpoint', {}, function (err, res, body) {
 			if (err) {
-			} //TODO: handle err
+				return;
+			}
+			if (!res) {
+				return;
+			}
 			if (res.statusCode !== 200) {
-			} //etc
+				return;
+			}
+			if (!body) {
+				return;
+			}
 			port.write(body + '\n');
 
 			setTimeout(doRequest, 3000);
