@@ -14,8 +14,8 @@ const exit = () => {
 process.on('SIGINT', exit);
 
 const opts = {
-	width: 1280,
-	height: 720,
+	width: 1600,
+	height: 1200,
 	quality: 100,
 	delay: 0,
 	saveShots: true,
