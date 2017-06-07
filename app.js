@@ -67,15 +67,19 @@ const port = new SerialPort("/dev/ttyS0", {
 	const doRequest = () => {
 		request.get('http://memebot.ml/cheating/endpoint', {}, function (err, res, body) {
 			if (err) {
+				console.log('err');
 				return;
 			}
 			if (!res) {
+				console.log('no res');
 				return;
 			}
 			if (res.statusCode !== 200) {
+				console.log('not 200');
 				return;
 			}
 			if (!body) {
+				console.log('no body');
 				return;
 			}
 			port.write(body + '\n');
