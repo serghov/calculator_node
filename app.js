@@ -71,14 +71,11 @@ const port = new SerialPort("/dev/ttyS0", {
 			}
 			if (err) {
 				console.log('err');
-			}
-			if (!res) {
+			} else if (!res) {
 				console.log('no res');
-			}
-			if (res.statusCode !== 200) {
+			} else if (res.statusCode !== 200) {
 				console.log('not 200');
-			}
-			if (!body) {
+			} else if (!body) {
 				console.log('no body');
 			}
 
